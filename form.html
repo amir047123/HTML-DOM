@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="color: red; font-size: 50px; text-align: center">Form</h1>
+
+    <form id="myForm">
+      <label for="username">UserName:</label>
+      <input type="text" id="username" name="username" />
+      <br /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+
+      <br /><br />
+
+      <button type="submit">Submit</button>
+
+      <p id="errorMessage" style="color: red"></p>
+    </form>
+
+    <h1 id="heading">Hello , world</h1>
+
+    <button onclick="changeStyle()">Change Style</button>
+
+    <p id="text" onmouseover="changeStyle()">Hover over this text</p>
+
+    <div
+      id="box"
+      style="width: 100px; height: 100px; background-color: red"
+    ></div>
+
+    <button onclick="resizeBox()">Move Box</button>
+  </body>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const errorMessage = document.getElementById("errorMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+
+      if (username === "") {
+        errorMessage.innerHTML = "Please enter a username";
+        return;
+      }
+
+      if (!email.includes("@")) {
+        errorMessage.innerHTML = "Please enter a valid email";
+        return;
+      }
+
+      errorMessage.style.color = "green";
+      errorMessage.innerHTML = "Form submitted successfully";
+    });
+
+    function changeStyle() {
+      const heading = document.getElementById("heading");
+      const text = document.getElementById("text");
+
+      const box = document.getElementById("box");
+
+      heading.style.color = "red";
+      heading.style.fontSize = "50px";
+      heading.style.textAlign = "center";
+
+      text.style.color = "red";
+      text.style.fontSize = "50px";
+      text.style.textAlign = "center";
+
+      box.style.width = "200px";
+      box.style.height = "200px";
+      box.style.backgroundColor = "blue";
+      box.style.borderRadius = "10px";
+    }
+  </script>
+</html>

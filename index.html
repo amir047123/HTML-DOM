@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Page</title>
+  </head>
+  <body>
+    <h1 id="title" style="color: blue; font-size: 50px">
+      Welcome to javascript dom
+    </h1>
+
+    <p class="description">this is a paragraph</p>
+
+    <ul>
+      <li id="list">Item 1</li>
+    </ul>
+
+    <button id="myButton">Click Me</button>
+    <p id="output"></p>
+  </body>
+
+  <!-- <script>
+    const title = document.getElementById("title");
+
+    title.innerHTML = " Welcome to javascript dom";
+    title.style.color = "red";
+    title.style.fontSize = "50px";
+  </script> -->
+
+  <script>
+    // const list = document.getElementById("list");
+
+    // const newItem = document.createElement("li");
+    // newItem.innerHTML = "item 2";
+
+    // list.appendChild(newItem);
+
+    const button = document.getElementById("myButton");
+    const output = document.getElementById("output");
+
+    button.addEventListener("click", function () {
+      output.innerHTML = "You clicked the button";
+    });
+  </script>
+</html>
